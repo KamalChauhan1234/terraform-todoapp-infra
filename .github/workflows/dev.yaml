@@ -1,9 +1,9 @@
 name: "Dev Terraform Workflow"
 
 on:
-  pull_request:
-    branches:
-      - main
+  # pull_request:
+  #   branches:
+  #     - main
   push:
     branches:
       - main      
@@ -22,9 +22,9 @@ jobs:
       - name: Azure Login
         uses: Azure/login@v2.3.0
         with:
-          client-id: ff27bcf6-f60c-4a57-8b01-8eee5de2a9cd
-          tenant-id: 0f7010fd-209e-4344-8457-043ffb37143b
-          subscription-id: 1075ec7a-b17a-4f37-bf3f-9d68c4506dc1
+          client-id: 0e25357b-8270-49e7-99b6-eb2161b7f3a0
+          tenant-id: d044667f-42ca-49f4-8d4f-684197e03471
+          subscription-id: caba13fb-1019-44a6-817f-cc5eb0ec1c55
             
       - name: Terraform fmt
         id: fmt
@@ -60,10 +60,9 @@ jobs:
       - name: Azure Login
         uses: Azure/login@v2.3.0
         with:
-          client-id: ff27bcf6-f60c-4a57-8b01-8eee5de2a9cd
-          tenant-id: 0f7010fd-209e-4344-8457-043ffb37143b
-          subscription-id: 1075ec7a-b17a-4f37-bf3f-9d68c4506dc1   
-          
+          client-id: 0e25357b-8270-49e7-99b6-eb2161b7f3a0
+          tenant-id: d044667f-42ca-49f4-8d4f-684197e03471
+          subscription-id: caba13fb-1019-44a6-817f-cc5eb0ec1c55     
       - name: Terraform Init
         id: init
         run: terraform init -input=false  
