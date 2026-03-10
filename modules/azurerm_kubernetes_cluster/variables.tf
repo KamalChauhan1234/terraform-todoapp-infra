@@ -6,6 +6,6 @@ variable "node_count" {
   default = 1
 }
 variable "vm_size" {
-  default = "Standard_D2_v2"
+  default = "standard_d2_v3"
 }
 variable "tags" {}
