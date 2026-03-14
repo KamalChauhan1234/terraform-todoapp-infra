@@ -6,14 +6,14 @@ terraform {
     }
   }
   backend "azurerm" {
-    resource_group_name  = "rg-stg"
-    storage_account_name = "stgmicro"
-    container_name       = "containermicro"
+    resource_group_name  = "rg-kl"
+    storage_account_name = "stgmicro123"
+    container_name       = "conkk"
     key                  = "dev.tfstatee"
   }
 }
 
 provider "azurerm" {
   features {}
-  subscription_id = "caba13fb-1019-44a6-817f-cc5eb0ec1c55"
+  subscription_id = "7d7e4c65-1bfb-4455-b143-d0d76737869b"
 }
