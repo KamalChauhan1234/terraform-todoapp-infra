@@ -6,9 +6,9 @@ terraform {
     }
   }
   backend "azurerm" {
-    resource_group_name  = "rg-per"
-    storage_account_name = "stgper"
-    container_name       = "conper"
+    resource_group_name  = "rg-k2"
+    storage_account_name = "stgk2 "
+    container_name       = "conk2"
     key                  = "dev.tfstatee"
   }
 }
