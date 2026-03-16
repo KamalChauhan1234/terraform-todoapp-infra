@@ -6,9 +6,9 @@ terraform {
     }
   }
   backend "azurerm" {
-    resource_group_name  = "NetworkWatcherRG"
-    storage_account_name = "stgk2 "
-    container_name       = "conk2"
+    resource_group_name  = "rg-p4"
+    storage_account_name = "stgp4 "
+    container_name       = "kkp4"
     key                  = "dev.tfstatee"
   }
 }
