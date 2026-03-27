@@ -65,7 +65,7 @@ module "sql_db" {
 # }
 
 module "ui_webapp" {
-  depends_on       = [module.resource_group]
+  depends_on       = [module.rg]
   source           = "../../modules/azurerm_web_app"
   runtime_stack    = "node"
   enable_db        = false
@@ -78,7 +78,7 @@ module "ui_webapp" {
 }
 
 module "backned_webapp" {
-  depends_on         = [module.sql_database]
+  depends_on         = [module.sql_db]
   source             = "../../modules/azurerm_web_app"
   runtime_stack      = "python"
   enable_db          = true
