@@ -66,7 +66,7 @@ module "sql_db" {
 
 module "ui_webapp" {
   depends_on       = [module.resource_group]
-  source           = "../../Modules/Azurerm_Webapp"
+  source           = "../../modules/azurerm_web_app"
   runtime_stack    = "node"
   enable_db        = false
   app_name         = "dev-todoapp-ui-web-kam"
@@ -79,7 +79,7 @@ module "ui_webapp" {
 
 module "backned_webapp" {
   depends_on         = [module.sql_database]
-  source             = "../../Modules/Azurerm_Webapp"
+  source             = "../../modules/azurerm_web_app"
   runtime_stack      = "python"
   enable_db          = true
   app_name           = "dev-todoapp-backend-web-kam"
