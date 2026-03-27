@@ -8,7 +8,7 @@ terraform {
   backend "azurerm" {
     resource_group_name  = "rgweb"
     storage_account_name = "stgweb"
-    container_name       = "rgweb"
+    container_name       = "kkcon"
     key                  = "dev.tfstatee"
   }
 }
