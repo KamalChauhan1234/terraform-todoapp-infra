@@ -11,6 +11,7 @@ module "rg" {
   rg_name     = "rg-prod-todoapp"
   rg_location = "centralindia"
   rg_tags     = local.common_tags
+  
 }
 
 module "rg1" {

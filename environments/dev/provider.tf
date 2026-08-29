@@ -6,10 +6,11 @@ terraform {
     }
   }
    backend "azurerm" {
-    resource_group_name  = "rgweb"
-    storage_account_name = "stgwebland2"
-    container_name       = "kkcon"
+    resource_group_name  = "rgvistara"
+    storage_account_name = "stgvistara"
+    container_name       = "kkconvision"
     key                  = "dev.tfstatee"
+    
   } 
 }
 
