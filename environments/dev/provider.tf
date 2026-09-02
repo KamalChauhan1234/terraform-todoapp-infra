@@ -6,8 +6,8 @@ terraform {
     }
   }
    backend "azurerm" {
-    resource_group_name  = "rgvistara"
-    storage_account_name = "stgvistara"
+    resource_group_name  = "rgvistara1"
+    storage_account_name = "stgvistara2"
     container_name       = "kkconvision"
     key                  = "dev.tfstatee"
     
