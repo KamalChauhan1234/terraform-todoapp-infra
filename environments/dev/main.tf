@@ -13,6 +13,8 @@ resource_prefix = "${local.name}-${local.environment}"
 }
 
 
+
+
 module "rg" {
   source      = "../../modules/azurerm_resource_group"
   rg_name     = "rg-${local.resource_prefix}"
