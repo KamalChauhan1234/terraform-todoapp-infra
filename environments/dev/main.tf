@@ -24,7 +24,7 @@ module "acr" {
   depends_on = [module.rg]
   source     = "../../modules/azurerm_container_registry"
   acr_name   = "acrdevtodoacr"
-  rg_name     = module.rg.name
+  rg_name     = module.rg.rg_name
   location   = local.location
   tags       = local.common_tags
 }
@@ -54,7 +54,7 @@ module "aks" {
   source     = "../../modules/azurerm_kubernetes_cluster"
   aks_name   = "aks-${local.resource_prefix}"
   location   = local.location
-  rg_name    = module.rg.name
+  rg_name    = module.rg.rg_name
   dns_prefix = "aks-${local.resource_prefix}"
   tags       = local.common_tags
 }
