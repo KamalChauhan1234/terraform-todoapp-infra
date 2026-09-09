@@ -1,27 +1,33 @@
 locals {
+  name = "todo"
+  location    = "centralindia"
+  environment = var.environment
+resource_prefix = "${local.name}-${local.environment}"
+
   common_tags = {
     "ManagedBy"   = "Terraform"
     "Owner"       = "TodoAppTeam"
     "Environment" = "dev"
+    project      = "TodoApp"
   }
 }
 
 
 module "rg" {
   source      = "../../modules/azurerm_resource_group"
-  rg_name     = "rg-dev-todoapp-01"
-  rg_location = "centralindia"
+  rg_name     = "rg-${local.resource_prefix}"
+  rg_location = local.location
   rg_tags     = local.common_tags
 }
 
-# module "acr" {
-#   depends_on = [module.rg]
-#   source     = "../../modules/azurerm_container_registry"
-#   acr_name   = "acrdevtodoapp015353"
-#   rg_name    = "rg-dev-todoapp-01"
-#   location   = "centralindia"
-#   tags       = local.common_tags
-# }
+module "acr" {
+  depends_on = [module.rg]
+  source     = "../../modules/azurerm_container_registry"
+  acr_name   = "acrdevtodoacr"
+   rg_name     = module.rg.rg_name
+  location   = local.location
+  tags       = local.common_tags
+}
 
 # module "sql_server" {
 #   depends_on      = [module.rg]
@@ -46,10 +52,10 @@ module "rg" {
 module "aks" {
   depends_on = [module.rg]
   source     = "../../modules/azurerm_kubernetes_cluster"
-  aks_name   = "aks-dev-todoapp"
-  location   = "centralindia"
-  rg_name    = "rg-dev-todoapp-01"
-  dns_prefix = "aks-dev-todoapp"
+  aks_name   = "aks-${local.resource_prefix}"
+  location   = lo
+  rg_name    = module.rg.rg_name
+  dns_prefix = "aks-${local.resource_prefix}"
   tags       = local.common_tags
 }
 

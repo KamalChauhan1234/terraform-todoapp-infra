@@ -6,9 +6,9 @@ terraform {
     }
   }
    backend "azurerm" {
-    resource_group_name  = "rgvistara12"
-    storage_account_name = "stgvistara23"
-    container_name       = "kkconvision"
+    resource_group_name  = "rg-devopsinsiders"
+    storage_account_name = "twostates"
+    container_name       = "tfstate"
     key                  = "dev.tfstatee"
     
   } 
@@ -16,6 +16,6 @@ terraform {
 
 provider "azurerm" {
   features {}
-  subscription_id = "7d7e4c65-1bfb-4455-b143-d0d76737869b"
+  subscription_id = "01ea0417-d11f-43fb-abdd-b2f167d94a39"
 }
 
