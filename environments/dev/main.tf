@@ -61,6 +61,12 @@ module "aks" {
   tags       = local.common_tags
 }
 
+resource "azurerm_role_asaignment" "aks_acr_pull" {
+  scope                = module.acr.id
+  role_definition_name = "AcrPull"
+  principal_id         = module.aks.principal_id
+}
+
 
 # module "pip" {
 #   source   = "../../modules/azurerm_public_ip"
