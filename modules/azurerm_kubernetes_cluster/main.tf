@@ -3,6 +3,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
   location            = var.location
   resource_group_name = var.rg_name
   dns_prefix          = var.dns_prefix
+  oidc_issuer_enabled = true   # <-- ye line add karo
 
   default_node_pool {
     name       = "default"
