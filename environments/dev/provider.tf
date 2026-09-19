@@ -9,7 +9,7 @@ terraform {
     resource_group_name  = "rg-devopsinsiders"
     storage_account_name = "twostates1 "
     container_name       = "tfstate"
-    key                  = "dev.tfstatee"
+    key                  = "dev.tfstate"
     
   } 
 }
