@@ -6,8 +6,8 @@ terraform {
     }
   }
    backend "azurerm" {
-    resource_group_name  = "test-rg"
-    storage_account_name = "teststgaxe"
+    resource_group_name  = "rg-devopsinsiders"
+    storage_account_name = "twostates1 "
     container_name       = "tfstate"
     key                  = "dev.tfstatee"
     
