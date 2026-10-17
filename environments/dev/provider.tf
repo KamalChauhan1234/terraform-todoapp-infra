@@ -8,12 +8,17 @@ terraform {
    backend "azurerm" {
     subscription_id = "01ea0417-d11f-43fb-abdd-b2f167d94a39"
     resource_group_name  = "rg-argocd"
-    storage_account_name = "stgargocd12345"
-    container_name       = "conargocd12345"
+    storage_account_name = "stgargocd123456"
+    container_name       = "conargocd123456"
     key                  = "dev.tfstate"
     
   } 
 }
+
+
+
+
+
 
 
 
